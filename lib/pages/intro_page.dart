@@ -37,7 +37,7 @@ class IntroPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("Fresh looks daily. Dress up your phone in style",
+                    Text("Fresh looks daily Dress up your phone in style",
                         style: GoogleFonts.lora(
                           textStyle: const TextStyle(
                               fontSize: 30,
@@ -45,7 +45,7 @@ class IntroPage extends StatelessWidget {
                               color: Colors.white),
                         )),
                     Text(
-                      "Make it easy to user to access the latest and most important news quickly in single platform",
+                      "A large, high-quality image showcasing a beautiful or trendy wallpaper",
                       style: TextStyle(
                           fontSize: 15,
                           fontWeight: FontWeight.w400,

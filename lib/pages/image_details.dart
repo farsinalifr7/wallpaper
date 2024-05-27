@@ -37,8 +37,8 @@ class _ImagePageState extends State<ImagePage> {
                   "Set as Wallpaper",
                   style: TextStyle(
                     color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
                   ),
                 ),
               ),

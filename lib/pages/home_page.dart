@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:http/http.dart' as http;
 import 'package:walpaper/pages/image_details.dart';
 
@@ -36,13 +37,16 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[600],
+      backgroundColor: Colors.grey[300],
+      //backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
           Expanded(
-              child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, childAspectRatio: 1 / 1.2),
+              child: MasonryGridView.builder(
+                  gridDelegate:
+                      const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                  ),
                   itemCount: images.length,
                   itemBuilder: (context, index) {
                     return GestureDetector(
@@ -57,9 +61,13 @@ class _HomePageState extends State<HomePage> {
                         );
                       },
                       child: Padding(
-                        padding: const EdgeInsets.all(1),
+                        padding: const EdgeInsets.all(1.2),
                         child: Container(
-                          decoration: const BoxDecoration(color: Colors.grey),
+                          decoration: const BoxDecoration(
+                              // borderRadius: BorderRadius.all(
+                              //   Radius.circular(16),
+                              // ),
+                              color: Colors.grey),
                           child: Image.network(
                             images[index]["src"]["tiny"],
                             fit: BoxFit.cover,
@@ -76,11 +84,19 @@ class _HomePageState extends State<HomePage> {
                 loadMore();
               },
               child: Container(
-                child: const Center(
-                  child: Text(
-                    "Load more",
-                    style: TextStyle(color: Colors.white),
-                  ),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Load more",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Icon(
+                      Icons.refresh,
+                      color: Colors.white,
+                      size: 18,
+                    ),
+                  ],
                 ),
               ),
             ),
